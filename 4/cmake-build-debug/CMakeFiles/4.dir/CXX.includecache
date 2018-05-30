@@ -7,10 +7,6 @@
 #IncludeRegexTransform: 
 
 E:/files/c,cpp/projects/4/main.cpp
-algorithm
--
-iostream
--
-vector
+bits/stdc++.h
 -
 

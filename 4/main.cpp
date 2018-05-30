@@ -2,6 +2,16 @@
 
 using namespace std;
 
+// 1
+template <class T>
+T minv(T a,T b){
+    if(a<b)
+        return a;
+    else
+    return b;
+}
+
+// 2
 const int SIZE = 100;
 class Stack{
 public:
@@ -26,25 +36,26 @@ private:
     int tos;
 };
 
+// 4
 template<class T> class List{
 public:
     List(){
         pFirst = NULL;
     };  //构造函数
     void Add(T& a){
-        Node *tmp = (Node *)memset(sizeof(Node));
-        tmp->pT = a;
+        Node *tmp = new Node;
+        tmp->pT = &a;
         tmp->pNext = pFirst;
         pFirst = tmp;
     };  //在Link表头添加新结点
     void Remove(T& a){
         Node *tmp = pFirst;
-        if(pFirst->pT==a){
+        if(*(pFirst->pT)==a){
             pFirst = pFirst->pNext;
             return;
         }
-        while(!tmp){
-            if(tmp->pNext->pT == a){
+        while(tmp!=NULL){
+            if(*(tmp->pNext->pT) == a){
                 tmp->pNext = tmp->pNext->pNext;
                 return;
             }
@@ -54,7 +65,7 @@ public:
     T* Find(T& a){
         Node * tmp = pFirst;
         while(tmp!=NULL){
-            if(*tmp->pT==a){
+            if(*(tmp->pT)==a){
                 return tmp->pT;
             }
             tmp = tmp->pNext;
@@ -64,14 +75,12 @@ public:
     void PrintList(){
         Node * tmp = pFirst;
         while(tmp!=NULL){
-            if(*tmp->pT==a){
-                cout<<pT<<' ';
-            }
+            cout<<*tmp->pT<<' ';
             tmp = tmp->pNext;
         }
         cout<<endl;
     };  // 打印输出整个链表
-    ~List();
+    ~List(){};
 protected:
     struct Node{
         Node *pNext;
@@ -80,12 +89,29 @@ protected:
     Node *pFirst;        //链首结点指针
 };
 
+typedef struct Snode{
+    string name;
+    int age;
+}student;
+
+ostream& operator<<(ostream &out,student &a){
+    out<<"name:"<<a.name<<" age:"<<a.age<<endl;
+    return out;
+}
+
+bool operator == (student &a,student &b){
+    return a.name==b.name&&a.age==b.age;
+}
 
 int main() {
+    // 1
+    cout<<"min(1,2)="<<minv(1,2)<<endl;
+    // 2
     Stack st;
     st.Push(1);
     cout<<"top of the stack is "<<st.Pop()<<endl;
     int x;
+    // 3
     vector<int> v;
     cout<<"please input some number to push into the vector(input 0 to stop):";
     while(cin>>x&&x!=0){
@@ -105,5 +131,20 @@ int main() {
     cout<<"using for_each to output:";
     for_each(v.begin(),v.end(),[&](int a){cout<<a<<' ';});
     cout<<endl;
+    // 4
+    student a,b,*tmp;
+    a.name="1";
+    a.age=1;
+    b.name="2";
+    b.age=2;
+//    cout<<a<<endl;
+    List<student> l;
+    l.Add(a);
+    l.Add(b);
+    l.PrintList();
+    tmp = l.Find(a);
+    cout<<"tmp="<<*tmp<<endl;
+    l.Remove(a);
+    l.PrintList();
     return 0;
 }
