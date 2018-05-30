@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/files/c,cpp/projects/2/2.cpp
+CPoint.h
+E:/files/c,cpp/projects/2/CPoint.h
+
+E:/files/c,cpp/projects/2/CPoint.h
+bits/stdc++.h
+-
+

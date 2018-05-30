@@ -1,0 +1,7 @@
+E:/files/c,cpp/projects/1/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/files/c,cpp/projects/1/cmake-build-debug/CMakeFiles/sum.dir
+E:/files/c,cpp/projects/1/cmake-build-debug/CMakeFiles/lab1_2.dir
+E:/files/c,cpp/projects/1/cmake-build-debug/CMakeFiles/lab1_3.dir
+E:/files/c,cpp/projects/1/cmake-build-debug/CMakeFiles/lab1_4.dir
+E:/files/c,cpp/projects/1/cmake-build-debug/CMakeFiles/lab1_5.dir
+E:/files/c,cpp/projects/1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
