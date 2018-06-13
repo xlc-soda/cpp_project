@@ -24,7 +24,7 @@ int main(int argc,char * argv[]){
         return 0;
     }
     cout<<"Input 1 to input, 0 to output"<<endl;
-    int n;cin>>n;getchar();
+    int n;cin>>n;gets(s);
     if(n==1) {
         ofstream out(argv[1]);
         if(out.is_open()){
