@@ -1,1 +1,1 @@
-# cpp_project
+# code for C++ class
